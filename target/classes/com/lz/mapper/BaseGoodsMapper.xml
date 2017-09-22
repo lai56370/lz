@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lz.mapper.BaseGoodsMapper">
+	<!-- 暂时不用缓存 <cache/> -->
+    <select id="getById" resultType="BaseGoodsModel">
+        SELECT
+        <include refid="com.lz.mapper.BaseGoodsMapperGen.baseGoodsColumns"></include>
+        FROM
+        base_goods
+        <where>
+            base_goods.id = #{id}
+        </where>
+        ;
+    </select>
+</mapper>
+

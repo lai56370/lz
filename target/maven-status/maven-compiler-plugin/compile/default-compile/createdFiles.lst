@@ -1,0 +1,13 @@
+com\lz\model\BaseGoodsModelGen.class
+com\lz\service\GoodsService.class
+com\lz\controller\GoodsController.class
+com\lz\listener\MyApplicationStartedEventListener.class
+com\lz\mapper\BaseGoodsMapperGen.class
+com\lz\model\DataModel.class
+com\lz\Application.class
+com\lz\listener\MyApplicationPreparedEventListener.class
+com\lz\mapper\BaseGoodsMapper.class
+com\lz\listener\MyApplicationEnvironmentPreparedEventListener.class
+com\lz\api\QpController.class
+com\lz\model\BaseGoodsModel.class
+com\lz\listener\MyApplicationFailedEventListener.class
