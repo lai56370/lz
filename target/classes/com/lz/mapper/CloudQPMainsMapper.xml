@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lz.mapper.CloudQPMainsMapper">
+    <!-- ===========================================代码生成开始============================================ -->
+    <!-- 暂时不用缓存 <cache/> -->
+
+    <resultMap id="CloudQPMainsResultMap" type="com.lz.model.CloudQPMains">
+        <result property="BG_MAINS_UUID" column="BG_MAINS_UUID"/>
+        <result property="declare_id" column="declare_id"/>
+        <result property="entry_type" column="entry_type"/>
+        <result property="unify_no" column="unify_no"/>
+        <result property="apply_no" column="apply_no"/>
+        <result property="INDATE_DT" column="INDATE_DT"/>
+        <result property="apply_dt" column="apply_dt"/>
+        <result property="cabin_no" column="cabin_no"/>
+        <result property="voyage" column="voyage"/>
+        <result property="verify_no" column="verify_no"/>
+        <result property="contract_no" column="contract_no"/>
+        <result property="DECLAREPORT_NO" column="DECLAREPORT_NO"/>
+        <result property="port_no" column="port_no"/>
+        <result property="imposemode_no" column="imposemode_no"/>
+        <result property="start_country_no" column="start_country_no"/>
+        <result property="loadport_no" column="loadport_no"/>
+        <result property="end_country_no" column="end_country_no"/>
+        <result property="TRADE_COUNTRY_NO" column="TRADE_COUNTRY_NO"/>
+        <result property="freight_currency_no" column="freight_currency_no"/>
+        <result property="freightmode_no" column="freightmode_no"/>
+        <result property="freight" column="freight"/>
+        <result property="subscribe_currency_no" column="subscribe_currency_no"/>
+        <result property="subscribemode_no" column="subscribemode_no"/>
+        <result property="subscribe" column="subscribe"/>
+        <result property="incidental_currency_no" column="incidental_currency_no"/>
+        <result property="incidentalmode_no" column="incidentalmode_no"/>
+        <result property="incidental" column="incidental"/>
+        <result property="grossweight" column="grossweight"/>
+        <result property="netweight" column="netweight"/>
+        <result property="licence_no" column="licence_no"/>
+        <result property="records_no" column="records_no"/>
+        <result property="shipper_no" column="shipper_no"/>
+        <result property="shipper_name" column="shipper_name"/>
+        <result property="consignee_no" column="consignee_no"/>
+        <result property="consignee_name" column="consignee_name"/>
+        <result property="agent_no" column="agent_no"/>
+        <result property="agent_name" column="agent_name"/>
+        <result property="piece" column="piece"/>
+        <result property="pack_no" column="pack_no"/>
+        <result property="remitmode_no" column="remitmode_no"/>
+        <result property="trade_no" column="trade_no"/>
+        <result property="transmode_no" column="transmode_no"/>
+        <result property="transname" column="transname"/>
+        <result property="bargainmode_no" column="bargainmode_no"/>
+        <result property="TSGXQR" column="TSGXQR"/>
+        <result property="JGYXQR" column="JGYXQR"/>
+        <result property="ZFTXQSYFQR" column="ZFTXQSYFQR"/>
+        <result property="mark" column="mark"/>
+        <result property="SEND_DATE" column="SEND_DATE"/>
+        <result property="QP_FLAG" column="QP_FLAG"/>
+        <result property="IMSTATUS" column="IMSTATUS"/>
+        <result property="SEND_USER" column="SEND_USER"/>
+    </resultMap>
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="CloudQPMainsColumns">
+			BG_MAINS.BG_MAINS_UUID,
+            BG_MAINS.declare_id,
+            BG_MAINS.entry_type,
+            BG_MAINS.unify_no,
+            BG_MAINS.apply_no,
+            BG_MAINS.INDATE_DT,
+            BG_MAINS.apply_dt,
+            BG_MAINS.cabin_no,
+            BG_MAINS.voyage,
+            BG_MAINS.verify_no,
+            BG_MAINS.contract_no,
+            BG_MAINS.DECLAREPORT_NO,
+            BG_MAINS.port_no,
+            BG_MAINS.imposemode_no,
+            BG_MAINS.start_country_no,
+            BG_MAINS.loadport_no,
+            BG_MAINS.end_country_no,
+            BG_MAINS.TRADE_COUNTRY_NO,
+            BG_MAINS.freight_currency_no,
+            BG_MAINS.freightmode_no,
+            BG_MAINS.freight,
+            BG_MAINS.subscribe_currency_no,
+            BG_MAINS.subscribemode_no,
+            BG_MAINS.subscribe,
+            BG_MAINS.incidental_currency_no,
+            BG_MAINS.incidentalmode_no,
+            BG_MAINS.incidental,
+            BG_MAINS.grossweight,
+            BG_MAINS.netweight,
+            BG_MAINS.licence_no,
+            BG_MAINS.records_no,
+            BG_MAINS.shipper_no,
+            BG_MAINS.shipper_name,
+            BG_MAINS.consignee_no,
+            BG_MAINS.consignee_name,
+            BG_MAINS.agent_no,
+            BG_MAINS.agent_name,
+            BG_MAINS.piece,
+            BG_MAINS.pack_no,
+            BG_MAINS.remitmode_no,
+            BG_MAINS.trade_no,
+            BG_MAINS.transmode_no,
+            BG_MAINS.transname,
+            BG_MAINS.bargainmode_no,
+            BG_MAINS.TSGXQR,
+            BG_MAINS.JGYXQR,
+            BG_MAINS.ZFTXQSYFQR,
+            BG_MAINS.mark,
+            BG_MAINS.SEND_DATE,
+            BG_MAINS.QP_FLAG,
+            BG_MAINS.IMSTATUS,
+            BG_MAINS.SEND_USER
+	</sql>
+
+    <sql id="CloudQPMainsValues">
+        #{BG_MAINS_UUID},
+        #{declare_id},
+        #{entry_type},
+        #{unify_no},
+        #{apply_no},
+        #{INDATE_DT},
+        #{apply_dt},
+        #{cabin_no},
+        #{voyage},
+        #{verify_no},
+        #{contract_no},
+        #{DECLAREPORT_NO},
+        #{port_no},
+        #{imposemode_no},
+        #{start_country_no},
+        #{loadport_no},
+        #{end_country_no},
+        #{TRADE_COUNTRY_NO},
+        #{freight_currency_no},
+        #{freightmode_no},
+        #{freight},
+        #{subscribe_currency_no},
+        #{subscribemode_no},
+        #{subscribe},
+        #{incidental_currency_no},
+        #{incidentalmode_no},
+        #{incidental},
+        #{grossweight},
+        #{netweight},
+        #{licence_no},
+        #{records_no},
+        #{shipper_no},
+        #{shipper_name},
+        #{consignee_no},
+        #{consignee_name},
+        #{agent_no},
+        #{agent_name},
+        #{piece},
+        #{pack_no},
+        #{remitmode_no},
+        #{trade_no},
+        #{transmode_no},
+        #{transname},
+        #{bargainmode_no},
+        #{TSGXQR},
+        #{JGYXQR},
+        #{ZFTXQSYFQR},
+        #{mark},
+        #{SEND_DATE},
+        #{QP_FLAG},
+        #{IMSTATUS},
+        #{SEND_USER}
+    </sql>
+
+    <sql id="CloudQPMainsValuesBatch">
+                    #{item.BG_MAINS_UUID},
+                    #{item.declare_id},
+                    #{item.entry_type},
+                    #{item.unify_no},
+                    #{item.apply_no},
+                    #{item.INDATE_DT},
+                    #{item.apply_dt},
+                    #{item.cabin_no},
+                    #{item.voyage},
+                    #{item.verify_no},
+                    #{item.contract_no},
+                    #{item.DECLAREPORT_NO},
+                    #{item.port_no},
+                    #{item.imposemode_no},
+                    #{item.start_country_no},
+                    #{item.loadport_no},
+                    #{item.end_country_no},
+                    #{item.TRADE_COUNTRY_NO},
+                    #{item.freight_currency_no},
+                    #{item.freightmode_no},
+                    #{item.freight},
+                    #{item.subscribe_currency_no},
+                    #{item.subscribemode_no},
+                    #{item.subscribe},
+                    #{item.incidental_currency_no},
+                    #{item.incidentalmode_no},
+                    #{item.incidental},
+                    #{item.grossweight},
+                    #{item.netweight},
+                    #{item.licence_no},
+                    #{item.records_no},
+                    #{item.shipper_no},
+                    #{item.shipper_name},
+                    #{item.consignee_no},
+                    #{item.consignee_name},
+                    #{item.agent_no},
+                    #{item.agent_name},
+                    #{item.piece},
+                    #{item.pack_no},
+                    #{item.remitmode_no},
+                    #{item.trade_no},
+                    #{item.transmode_no},
+                    #{item.transname},
+                    #{item.bargainmode_no},
+                    #{item.TSGXQR},
+                    #{item.JGYXQR},
+                    #{item.ZFTXQSYFQR},
+                    #{item.mark},
+                    #{item.SEND_DATE},
+                    #{item.QP_FLAG},
+                    #{item.IMSTATUS},
+                    #{item.SEND_USER}
+    </sql>
+
+    <insert id="insertCloudQPMains" parameterType="CloudQPMains">
+        INSERT INTO BG_MAINS
+        (<include refid="CloudQPMainsColumns"></include>)
+        VALUES
+        (<include refid="CloudQPMainsValues"></include>)
+        ;
+    </insert>
+
+    <insert id="insertCloudQPMainsBatch" parameterType="java.util.List">
+        INSERT INTO BG_MAINS
+        (<include refid="CloudQPMainsColumns"></include>)
+        VALUES
+        <foreach item="item" index="index" collection="list" separator=",">
+            (<include refid="CloudQPMainsValuesBatch"></include>)
+        </foreach>
+        ;
+    </insert>
+    <!-- ===========================================代码生成结束============================================ -->
+</mapper>

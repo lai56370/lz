@@ -86,17 +86,6 @@
         </filter>
     </appender>
 
-    <!-- 输出mysql数据库的appender配置 -->
-    <appender name="db" class="ch.qos.logback.classic.db.DBAppender">
-        <connectionSource
-                class="ch.qos.logback.core.db.DriverManagerConnectionSource">
-            <driverClass>com.mysql.jdbc.Driver</driverClass>
-            <url>jdbc:mysql://192.168.0.81:3306/scm</url>
-            <user>it</user>
-            <password>its123</password>
-        </connectionSource>
-    </appender>
-
     <!-- logger 的 level 代表 记录 大于或者等于当前级别的信息 -->
     <!-- additivity属性为false,表示此 loger的打印信息不再向上级传递，即比如 root ,就不会记录该级别的信息了
          默认是true 将信息给上级比如 root-->
@@ -135,6 +124,9 @@
         <appender-ref ref="STDOUT"/>
     </logger>
     <logger name="com.lz.mapper" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.lz.api" level="DEBUG">
         <appender-ref ref="STDOUT"/>
     </logger>
     <root level="INFO"> <!-- 为了不让控制台显示那么多 无用的 debug 代码所以 注释掉 <appender-ref ref="STDOUT" /> -->

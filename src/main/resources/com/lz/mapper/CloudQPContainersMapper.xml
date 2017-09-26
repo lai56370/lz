@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lz.mapper.CloudQPContainersMapper">
+    <!-- ===========================================代码生成开始============================================ -->
+    <!-- 暂时不用缓存 <cache/> -->
+
+    <resultMap id="CloudQPContainersResultMap" type="com.lz.model.CloudQPContainers">
+        <result property="BG_CONTAINERS_UUID" column="BG_CONTAINERS_UUID"/>
+        <result property="BG_MAINS_UUID" column="BG_MAINS_UUID"/>
+        <result property="num_no" column="num_no"/>
+        <result property="container_no" column="container_no"/>
+        <result property="container_type_no" column="container_type_no"/>
+    </resultMap>
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="CloudQPContainersColumns">
+			BG_CONTAINERS.BG_CONTAINERS_UUID,
+			BG_CONTAINERS.BG_MAINS_UUID,
+			BG_CONTAINERS.num_no,
+			BG_CONTAINERS.container_no,
+			BG_CONTAINERS.container_type_no
+	</sql>
+
+    <sql id="CloudQPContainersValues">
+                    #{BG_CONTAINERS_UUID},
+                    #{BG_MAINS_UUID},
+                    #{num_no},
+                    #{container_no},
+                    #{container_type_no}
+    </sql>
+
+    <sql id="CloudQPContainersValuesBatch">
+                    #{item.BG_CONTAINERS_UUID},
+                    #{item.BG_MAINS_UUID},
+                    #{item.num_no},
+                    #{item.container_no},
+                    #{item.container_type_no}
+
+    </sql>
+
+    <insert id="insertCloudQPContainers" parameterType="CloudQPContainers">
+        INSERT INTO BG_CONTAINERS
+        (<include refid="CloudQPContainersColumns"></include>)
+        VALUES
+        (<include refid="CloudQPContainersValues"></include>)
+        ;
+    </insert>
+
+    <insert id="insertCloudQPContainersBatch" parameterType="java.util.List">
+        INSERT INTO BG_CONTAINERS
+        (<include refid="CloudQPContainersColumns"></include>)
+        VALUES
+        <foreach item="item" index="index" collection="list" separator=",">
+            (<include refid="CloudQPContainersValuesBatch"></include>)
+        </foreach>
+        ;
+    </insert>
+    <!-- ===========================================代码生成结束============================================ -->
+</mapper>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lz.mapper.CloudQPGoodsMapper">
+    <!-- ===========================================代码生成开始============================================ -->
+    <!-- 暂时不用缓存 <cache/> -->
+
+    <resultMap id="CloudQPGoodsResultMap" type="com.lz.model.CloudQPGoods">
+        <result property="BG_GOODS_UUID" column="BG_GOODS_UUID"/>
+        <result property="BG_MAINS_UUID" column="BG_MAINS_UUID"/>
+        <result property="num_no" column="num_no"/>
+        <result property="item_no" column="item_no"/>
+        <result property="ver_no" column="ver_no"/>
+        <result property="goods_no" column="goods_no"/>
+        <result property="goods_spec" column="goods_spec"/>
+        <result property="goods_name" column="goods_name"/>
+        <result property="unit_no" column="unit_no"/>
+        <result property="unit02_no" column="unit02_no"/>
+        <result property="unit03_no" column="unit03_no"/>
+        <result property="amount" column="amount"/>
+        <result property="amount02" column="amount02"/>
+        <result property="amount03" column="amount03"/>
+        <result property="currency_no" column="currency_no"/>
+        <result property="country_no" column="country_no"/>
+        <result property="TOTALPRICE" column="TOTALPRICE"/>
+        <result property="price" column="price"/>
+        <result property="impose_no" column="impose_no"/>
+        <result property="OTHER_COUNTRY_NO" column="OTHER_COUNTRY_NO"/>
+    </resultMap>
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="CloudQPGoodsColumns">
+			BG_GOODS.BG_GOODS_UUID,
+            BG_GOODS.BG_MAINS_UUID,
+            BG_GOODS.num_no,
+            BG_GOODS.item_no,
+            BG_GOODS.ver_no,
+            BG_GOODS.goods_no,
+            BG_GOODS.goods_spec,
+            BG_GOODS.goods_name,
+            BG_GOODS.unit_no,
+            BG_GOODS.unit02_no,
+            BG_GOODS.unit03_no,
+            BG_GOODS.amount,
+            BG_GOODS.amount02,
+            BG_GOODS.amount03,
+            BG_GOODS.currency_no,
+            BG_GOODS.country_no,
+            BG_GOODS.TOTALPRICE,
+            BG_GOODS.price,
+            BG_GOODS.impose_no,
+            BG_GOODS.OTHER_COUNTRY_NO
+	</sql>
+
+    <sql id="CloudQPGoodsValues">
+                    #{BG_GOODS_UUID},
+                    #{BG_MAINS_UUID},
+                    #{num_no},
+                    #{item_no},
+                    #{ver_no},
+                    #{goods_no},
+                    #{goods_spec},
+                    #{goods_name},
+                    #{unit_no},
+                    #{unit02_no},
+                    #{unit03_no},
+                    #{amount},
+                    #{amount02},
+                    #{amount03},
+                    #{currency_no},
+                    #{country_no},
+                    #{TOTALPRICE},
+                    #{price},
+                    #{impose_no},
+                    #{OTHER_COUNTRY_NO}
+    </sql>
+
+    <sql id="CloudQPGoodsValuesBatch">
+                    #{item.BG_GOODS_UUID},
+                    #{item.BG_MAINS_UUID},
+                    #{item.num_no},
+                    #{item.item_no},
+                    #{item.ver_no},
+                    #{item.goods_no},
+                    #{item.goods_spec},
+                    #{item.goods_name},
+                    #{item.unit_no},
+                    #{item.unit02_no},
+                    #{item.unit03_no},
+                    #{item.amount},
+                    #{item.amount02},
+                    #{item.amount03},
+                    #{item.currency_no},
+                    #{item.country_no},
+                    #{item.TOTALPRICE},
+                    #{item.price},
+                    #{item.impose_no},
+                    #{item.OTHER_COUNTRY_NO}
+
+    </sql>
+
+    <insert id="insertCloudQPGoods" parameterType="CloudQPGoods">
+        INSERT INTO BG_GOODS
+        (<include refid="CloudQPGoodsColumns"></include>)
+        VALUES
+        (<include refid="CloudQPGoodsValues"></include>)
+        ;
+    </insert>
+
+    <insert id="insertCloudQPGoodsBatch" parameterType="java.util.List">
+        INSERT INTO BG_GOODS
+        (<include refid="CloudQPGoodsColumns"></include>)
+        VALUES
+        <foreach item="item" index="index" collection="list" separator=",">
+            (<include refid="CloudQPGoodsValuesBatch"></include>)
+        </foreach>
+        ;
+    </insert>
+    <!-- ===========================================代码生成结束============================================ -->
+</mapper>

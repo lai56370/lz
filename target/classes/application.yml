@@ -17,31 +17,24 @@ spring:
         request-context-attribute: request
     datasource:
     # mysql
-        url: jdbc:mysql://192.168.0.81:3306/scm
-        username: it
-        password: its123
-        driver-class-name: com.mysql.jdbc.Driver
-        maxActive: 20
-        minIdle: 1
+#        url: jdbc:mysql://192.168.0.81:3306/scm
+#        username: it
+#        password: its123
+#        driver-class-name: com.mysql.jdbc.Driver
+#        maxActive: 20
+#        minIdle: 1
 #sqlserver
-#        url: jdbc:sqlserver://192.168.0.17:1433; DatabaseName=ItemManager
-#        username: sa
-#        password: 1234
-#        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=testLz
+        username: sa
+        password: 2345678!
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 # LOGGING
 logging:
     path: /var/logs
     file: logs/myapp.log
     config: # location of config file (default classpath:logback.xml for logback)
-    #level:  DEBUG # levels for loggers, e.g. "logging.level.org.springframework=DEBUG" (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
-    level:
-        com:
-            qidiandw:
-                member:
-                    data.mapper: info
-                    security.mapper: info
-                    auth.mapper: info
+    level:  DEBUG # levels for loggers, e.g. "logging.level.org.springframework=DEBUG" (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
 
 #
 mybatis:

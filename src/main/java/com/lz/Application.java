@@ -36,7 +36,8 @@ public class Application {
 //        SpringApplication.run(Application.class, args);
 
 //        SpringApplication application = new SpringApplication(Application.class);
-//        Map<String, Object> defaultMap = new HashMap<String, Object>();
+//        Map<String, Object> defaultMap
+// = new HashMap<String, Object>();
 //        defaultMap.put("name", "Isea-Blog");
 ////还可以是Properties对象
 //        application.setDefaultProperties(defaultMap);
