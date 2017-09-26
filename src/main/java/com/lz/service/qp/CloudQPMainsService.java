@@ -15,6 +15,14 @@ public class CloudQPMainsService {
     @Autowired
     private CloudQPMainsMapper cloudQPMainsMapper;
 
+    public CloudQPMains getById(String id) {
+        return cloudQPMainsMapper.getById(id);
+    }
+
+    public void delById(String id) {
+        cloudQPMainsMapper.delById(id);
+    }
+
     public void addCloudQPMains(CloudQPMains cloudQPMains) {
         cloudQPMainsMapper.insertCloudQPMains(cloudQPMains);
     }

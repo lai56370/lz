@@ -4,6 +4,9 @@ server:
 spring:
     profiles:
         active: dev
+
+userset:
+    pdfPath: e://pdfShare
 ---
 # 开发环境
 spring:

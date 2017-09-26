@@ -22,4 +22,8 @@ public class CloudQPGoodsService {
     public void addCloudQPGoods(List<CloudQPGoods> cloudQPGoodsList) {
         cloudQPGoodsMapper.insertCloudQPGoodsBatch(cloudQPGoodsList);
     }
+
+    public void delByMainId(String mainId) {
+        cloudQPGoodsMapper.delByMainId(mainId);
+    }
 }

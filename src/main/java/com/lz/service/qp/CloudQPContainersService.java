@@ -17,4 +17,8 @@ public class CloudQPContainersService {
     public void addCloudQPContainersMapper(CloudQPContainers cloudQPContainers) {
         cloudQPContainersMapper.insertCloudQPContainers(cloudQPContainers);
     }
+
+    public void delByMainId(String mainId) {
+        cloudQPContainersMapper.delByMainId(mainId);
+    }
 }

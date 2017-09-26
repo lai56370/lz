@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Maven on 2017/9/26.
@@ -24,6 +25,11 @@ public class QpService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void sendQp(CloudQPMains cloudQPMains, List<CloudQPGoods> cloudQPGoodses, CloudQPContainers cloudQPContainers) {
+        if (null != cloudQPMainsService.getById(cloudQPMains.getBG_MAINS_UUID())) {
+            cloudQPMainsService.delById(cloudQPMains.getBG_MAINS_UUID());
+            cloudQPContainersService.delByMainId(cloudQPMains.getBG_MAINS_UUID());
+            cloudQPGoodsService.delByMainId(cloudQPMains.getBG_MAINS_UUID());
+        }
         cloudQPMains.setQP_FLAG("0");
         cloudQPMains.setEntry_type("M");
         cloudQPContainers.setNum_no(1);
