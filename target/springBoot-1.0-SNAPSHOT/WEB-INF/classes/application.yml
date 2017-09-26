@@ -1,5 +1,5 @@
 server:
-    port: 8060
+    port: 8080
 
 spring:
     profiles:
@@ -28,6 +28,7 @@ spring:
 #        minIdle: 1
 #sqlserver
         url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=bgxt
+#        url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=testLz
         username: qp
         password: 2345678!
         driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

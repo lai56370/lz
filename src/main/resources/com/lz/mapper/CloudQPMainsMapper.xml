@@ -60,6 +60,10 @@
         <result property="QP_FLAG" column="QP_FLAG"/>
         <result property="IMSTATUS" column="IMSTATUS"/>
         <result property="SEND_USER" column="SEND_USER"/>
+        <result property="DELIVER_NAME" column="DELIVER_NAME"/>
+        <result property="SHIPPER_CODE" column="SHIPPER_CODE"/>
+        <result property="CONSIGNEE_CODE" column="CONSIGNEE_CODE"/>
+        <result property="AGENT_CODE" column="AGENT_CODE"/>
     </resultMap>
 
     <!-- 用于select查询公用抽取的列 -->
@@ -115,7 +119,11 @@
             BG_MAINS.SEND_DATE,
             BG_MAINS.QP_FLAG,
             BG_MAINS.IMSTATUS,
-            BG_MAINS.SEND_USER
+            BG_MAINS.SEND_USER,
+            BG_MAINS.DELIVER_NAME,
+            BG_MAINS.SHIPPER_CODE,
+            BG_MAINS.CONSIGNEE_CODE,
+            BG_MAINS.AGENT_CODE
 	</sql>
 
     <sql id="CloudQPMainsValues">
@@ -170,7 +178,11 @@
         #{SEND_DATE},
         #{QP_FLAG},
         #{IMSTATUS},
-        #{SEND_USER}
+        #{SEND_USER},
+        #{DELIVER_NAME},
+        #{SHIPPER_CODE},
+        #{CONSIGNEE_CODE},
+        #{AGENT_CODE}
     </sql>
 
     <sql id="CloudQPMainsValuesBatch">
@@ -225,7 +237,11 @@
                     #{item.SEND_DATE},
                     #{item.QP_FLAG},
                     #{item.IMSTATUS},
-                    #{item.SEND_USER}
+                    #{item.SEND_USER},
+                    #{item.DELIVER_NAME},
+                    #{item.SHIPPER_CODE},
+                    #{item.CONSIGNEE_CODE},
+                    #{item.AGENT_CODE}
     </sql>
 
     <insert id="insertCloudQPMains" parameterType="CloudQPMains">

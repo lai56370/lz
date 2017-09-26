@@ -12,7 +12,7 @@
     <appender name="FILEERROR"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 正在记录日志文件的路径及文件名 -->
-        <file>web/log/lz/error.log</file>
+        <file>log/lz/error.log</file>
 
         <!-- 日志记录器的滚动策略，按日期，按大小记录:这里每天生产一个文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -20,7 +20,7 @@
                  而2017-09-22的日志文件由fileNamePattern指定。%d{yyyy-MM-dd}制定日期格式,%i指定索引-->
             <!-- 设置日志命名模式 -->
             <fileNamePattern>
-                web/log/lz/log-error-%d{yyyy-MM-dd}.%i.log
+                log/lz/log-error-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
 
             <!-- 按日志记录，还设置日志文件不能超过3M，日志文件会以索引0开始，命名日志文件，例如log-error-2017-09-22.0.log -->
@@ -51,7 +51,7 @@
     <appender name="FILWARN"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 正在记录日志文件的路径及文件名 -->
-        <file>web/log/lz/warn.log</file>
+        <file>log/lz/warn.log</file>
 
         <!-- 日志记录器的滚动策略，按日期，按大小记录:这里每天生产一个文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -59,7 +59,7 @@
                  而2017-09-22的日志文件由fileNamePattern指定。%d{yyyy-MM-dd}制定日期格式,%i指定索引-->
             <!-- 设置日志命名模式 -->
             <fileNamePattern>
-                web/log/lz/log-warn-%d{yyyy-MM-dd}.%i.log
+                log/lz/log-warn-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
 
             <!-- 按日志记录，还设置日志文件不能超过3M，日志文件会以索引0开始，命名日志文件，例如log-error-2017-09-22.0.log -->

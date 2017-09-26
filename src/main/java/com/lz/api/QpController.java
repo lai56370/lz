@@ -51,7 +51,8 @@ public class QpController {
             byte[] xdBytes = Base64.getDecoder().decode(xdBase64);
             byte[] fpBytes = Base64.getDecoder().decode(fpBase64);
             byte[] htBytes = Base64.getDecoder().decode(htBase64);
-            logger.info(userName);
+            logger.info(">>>>>>>>>>>>>>>" + userName);
+            logger.info(">>>>>>>>>>>>>>>" + cloudQPMains.getBG_MAINS_UUID() + ">>>>>>>>" + cloudQPMains.getContract_no());
             qpService.sendQp(cloudQPMains, cloudQPGoodses, cloudQPContainers, xdBytes, fpBytes, htBytes);
         } catch (Exception e) {
             logger.error("qp操作失败cloudQPMainsJson>>>>>>>>>>>>>>" + cloudQPMainsJson);
