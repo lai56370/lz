@@ -6,7 +6,7 @@ spring:
         active: dev
 
 userset:
-    pdfPath: e://pdfShare
+    pdfPath: e://pdfShare/
 ---
 # 开发环境
 spring:
@@ -27,8 +27,9 @@ spring:
 #        maxActive: 20
 #        minIdle: 1
 #sqlserver
+#        url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=bgxt
         url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=testLz
-        username: sa
+        username: qp
         password: 2345678!
         driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 

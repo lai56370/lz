@@ -42,6 +42,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:sqljdbc4:4.0" />
           <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1" />
           <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:1.1.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.0" />
@@ -52,6 +53,25 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.4" />
+          <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.7" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcmail-jdk14:138" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcprov-jdk14:138" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bctsp-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcmail-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: pentaho-reporting-engine:pentaho-reporting-engine-classic-core:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libbase:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:librepository:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libloader:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libserializer:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libformula:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libfonts:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libformat:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libdocbundle:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: pentaho-library:libxml:6.1.0.0-6" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.3.2" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
         </element>
       </element>
     </root>

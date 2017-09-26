@@ -47,5 +47,6 @@ public class Application {
         app.addListeners(new MyApplicationStartedEventListener());
         app.addListeners(new MyApplicationEnvironmentPreparedEventListener());
         app.run(args);
+
     }
 }

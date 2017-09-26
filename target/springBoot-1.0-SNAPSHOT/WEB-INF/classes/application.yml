@@ -1,0 +1,90 @@
+server:
+    port: 8060
+
+spring:
+    profiles:
+        active: dev
+
+userset:
+    pdfPath: e://pdfShare/
+---
+# 开发环境
+spring:
+    profiles: dev
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .ftl
+    freemarker:
+        cache: false
+        request-context-attribute: request
+    datasource:
+    # mysql
+#        url: jdbc:mysql://192.168.0.81:3306/scm
+#        username: it
+#        password: its123
+#        driver-class-name: com.mysql.jdbc.Driver
+#        maxActive: 20
+#        minIdle: 1
+#sqlserver
+        url: jdbc:sqlserver://127.0.0.1:1433; DatabaseName=bgxt
+        username: qp
+        password: 2345678!
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+# LOGGING
+logging:
+    path: /var/logs
+    file: logs/myapp.log
+    config: # location of config file (default classpath:logback.xml for logback)
+    level:  DEBUG # levels for loggers, e.g. "logging.level.org.springframework=DEBUG" (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+
+#
+mybatis:
+  mapperLocations: classpath:com/lz/mapper/*.xml
+  typeAliasesPackage: com.lz.model
+#  mybatis.config：mybatis-config.xml配置文件的路径
+#  mybatis.typeHandlersPackage：扫描typeHandlers的包
+#  mybatis.checkConfigLocation：检查配置文件是否存在
+#  mybatis.executorType：设置执行模式（SIMPLE, REUSE, BATCH），默认为SIMPLE
+
+---
+
+################### 正式环境的profile ###################
+spring:
+    profiles: produc
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .ftl
+    freemarker:
+        cache: false
+        request-context-attribute: request
+    datasource:
+    # mysql
+        url: jdbc:mysql://192.168.0.81:3306/scm
+        username: it
+        password: its123
+        driver-class-name: com.mysql.jdbc.Driver
+        maxActive: 20
+        minIdle: 1
+#sqlserver
+#        url: jdbc:sqlserver://192.168.0.17:1433; DatabaseName=ItemManager
+#        username: sa
+#        password: 1234
+#        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+# LOGGING
+logging:
+    path: /var/logs
+    file: logs/myapp.log
+    config: # location of config file (default classpath:logback.xml for logback)
+    level.*:  # levels for loggers, e.g. "logging.level.org.springframework=DEBUG" (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+
+mybatis:
+  mapperLocations: classpath:com/lz/mapper/*.xml
+  typeAliasesPackage: com.lz.model
+#  mybatis.config：mybatis-config.xml配置文件的路径
+#  mybatis.typeHandlersPackage：扫描typeHandlers的包
+#  mybatis.checkConfigLocation：检查配置文件是否存在
+#  mybatis.executorType：设置执行模式（SIMPLE, REUSE, BATCH），默认为SIMPLE
