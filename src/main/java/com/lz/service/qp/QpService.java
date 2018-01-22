@@ -1,11 +1,8 @@
 package com.lz.service.qp;
 
-import com.alibaba.fastjson.JSON;
-import com.lz.common.model.UserSet;
 import com.lz.model.CloudQPContainers;
 import com.lz.model.CloudQPGoods;
 import com.lz.model.CloudQPMains;
-import com.lz.util.PentahoReportUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
-import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  * Created by Maven on 2017/9/26.
@@ -35,6 +31,9 @@ public class QpService {
 
     @Value("${userset.pdfPath}")
     private String pdfPath;
+
+    @Value("${userset.oneWindowPath}")
+    private String oneWindowPath;
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void sendQp(CloudQPMains cloudQPMains, List<CloudQPGoods> cloudQPGoodses, CloudQPContainers cloudQPContainers,
@@ -65,5 +64,61 @@ public class QpService {
         cloudQPMainsService.addCloudQPMains(cloudQPMains);
         cloudQPContainersService.addCloudQPContainersMapper(cloudQPContainers);
         cloudQPGoodsService.addCloudQPGoods(cloudQPGoodses);
+    }
+
+    public void sendOneWindow(String filename, byte[] xmlBase, byte[] xdBase64, byte[] fpBase64, byte[] htBytes) throws Exception {
+
+        ZipOutputStream out = new ZipOutputStream(new FileOutputStream(oneWindowPath + "\\OutBox\\" + filename + ".zip"));
+        out.putNextEntry(new ZipEntry(filename + ".xml"));
+        out.write(xmlBase, 0, xmlBase.length);
+        out.closeEntry();
+
+        out.putNextEntry(new ZipEntry("packingList.pdf"));
+        out.write(xdBase64, 0, xdBase64.length);
+        out.closeEntry();
+
+        out.putNextEntry(new ZipEntry("invoice.pdf"));
+        out.write(fpBase64, 0, fpBase64.length);
+        out.closeEntry();
+
+        out.putNextEntry(new ZipEntry("contract.pdf"));
+        out.write(htBytes, 0, htBytes.length);
+        out.closeEntry();
+
+        // 每个打包都有的两个pdf信息
+        out.putNextEntry(new ZipEntry("保险协议.pdf"));
+        FileInputStream ins1 = new FileInputStream(new File(oneWindowPath + "\\保险协议.pdf"));
+        BufferedInputStream bin = new BufferedInputStream(ins1);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        BufferedOutputStream bout = new BufferedOutputStream(baos);
+        byte[] buffer = new byte[1024];
+        int len = bin.read(buffer);
+        while (len != -1) {
+            bout.write(buffer, 0, len);
+            len = bin.read(buffer);
+        }
+        bout.flush();
+
+        byte[] outByte = baos.toByteArray();
+        out.write(outByte, 0, outByte.length);
+        out.closeEntry();
+        out.putNextEntry(new ZipEntry("运输报价单及运费情况说明.pdf"));
+        ins1 = new FileInputStream(new File(oneWindowPath + "\\运输报价单及运费情况说明.pdf"));
+        bin = new BufferedInputStream(ins1);
+        baos = new ByteArrayOutputStream();
+        bout = new BufferedOutputStream(baos);
+        buffer = new byte[1024];
+        len = bin.read(buffer);
+        while (len != -1) {
+            bout.write(buffer, 0, len);
+            len = bin.read(buffer);
+        }
+        bout.flush();
+
+        outByte = baos.toByteArray();
+        out.write(outByte, 0, outByte.length);
+        out.closeEntry();
+
+        out.close();
     }
 }
